@@ -10,7 +10,18 @@ Welcome to the Tracking the International Space Station, an Introduction to Geof
 * How to use position proximity analysis to detect a position’s proximity to a polygon
 * How to create a GEO Map in SAS ESP Streamviewer
 
-![](videos/iss_overview.mp4) ![](videos/iss_model.mp4) ![](videos/iss_execute.mp4) 
+[![Tracking the International Space Station; An Introduction to Geofences](/images/video1.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180864412001
+ "Tracking the International Space Station; An Introduction to Geofences")
+
+[![Tracking the International Space Station; Model Description](/images/video2.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180864332001
+ "Tracking the International Space Station; Model Description")
+
+[![Tracking the International Space Station; Executing the Model and Viewing the Output](/images/video3.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+ "Tracking the International Space Station; Executing the Model and Viewing the Output")
+
 
 ### International Space Station
 
