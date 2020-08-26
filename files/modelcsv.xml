@@ -1,0 +1,192 @@
+<project name="iss_csv" threads="4" pubsub="auto" heartbeat-interval="1">
+  <metadata>
+    <meta id="studioUploadedBy">anonymousUser</meta>
+    <meta id="studioUploaded">1596550093394</meta>
+    <meta id="studioModifiedBy">anonymousUser</meta>
+    <meta id="studioModified">1597244354606</meta>
+    <meta id="layout">{"cq":{"approaching":{"x":-640,"y":510},"departing":{"x":-365,"y":520},"geoCircle":{"x":215,"y":185},"geoProximityAnalysis":{"x":-290,"y":185},"inner1k":{"x":-530,"y":315},"insideCircle":{"x":215,"y":320},"insidePoly":{"x":-40,"y":315},"iss":{"x":-45,"y":45},"landmarksCir":{"x":215,"y":40},"outer1k":{"x":-290,"y":315},"regionsPoly":{"x":-290,"y":45}}}</meta>
+  </metadata>
+  <contqueries>
+    <contquery name="cq" trace="iss">
+      <windows>
+        <window-source pubsub="true" index="pi_EMPTY" insert-only="true" name="iss">
+          <schema>
+            <fields>
+              <field name="dt" type="date" key="true"/>
+              <field name="long" type="double"/>
+              <field name="lat" type="double"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector class="fs" name="pubConnector">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="dateformat"><![CDATA[%m/%d/%Y:%H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[/home/zeph.stemle@sas.com/uploads/iss_input.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="rate"><![CDATA[2]]></property>
+                <property name="repeatcount"><![CDATA[1000]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-filter pubsub="true" name="outer1k">
+          <expression><![CDATA[distToEdge <= 2000000 and distToEdge > 1000000]]></expression>
+        </window-filter>
+        <window-source pubsub="true" insert-only="true" index="pi_EMPTY" name="regionsPoly">
+          <schema>
+            <fields>
+              <field name="ID" type="int64" key="true"/>
+              <field name="country" type="string"/>
+              <field name="datadef" type="string"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector class="fs" name="New_Connector_1">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="fsname"><![CDATA[/home/zeph.stemle@sas.com/uploads/countries2.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-geofence pubsub="true" name="geoProximityAnalysis">
+          <geofence coordinate-type="geographic" autosize-mesh="true" max-meshcells-per-geometry="500" polygon-compute-distance-to="segment" proximity-analysis="true" output-multiple-results="true" output-sorted-results="true"/>
+          <geometry desc-fieldname="country" data-fieldname="datadef" radius="2000000" data-separator=" "/>
+          <position x-fieldname="long" y-fieldname="lat" lookupdistance="1000"/>
+          <output geoid-fieldname="geoID" geodesc-fieldname="polyDesc" geodistance-fieldname="distToEdge" eventnumber-fieldname="eventnum"/>
+          <connectors>
+            <connector class="fs" name="subConnector2">
+              <properties>
+                <property name="type"><![CDATA[sub]]></property>
+                <property name="snapshot"><![CDATA[true]]></property>
+                <property name="dateformat"><![CDATA[%m/%d/%Y:%H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[/home/zeph.stemle@sas.com/uploads/iss_geoprox.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-geofence>
+        <window-filter pubsub="true" name="inner1k">
+          <expression><![CDATA[distToEdge <= 1000000 and distToEdge > 0]]></expression>
+        </window-filter>
+        <window-filter pubsub="true" name="insidePoly">
+          <expression><![CDATA[distToEdge < 0]]></expression>
+        </window-filter>
+        <window-source pubsub="true" index="pi_EMPTY" insert-only="true" name="landmarksCir">
+          <schema>
+            <fields>
+              <field name="landmark" type="string" key="true"/>
+              <field name="lat" type="double"/>
+              <field name="long" type="double"/>
+              <field name="radius" type="double"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector class="fs" name="landmarks_con">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="header"><![CDATA[1]]></property>
+                <property name="fsname"><![CDATA[/home/zeph.stemle@sas.com/uploads/landmarks.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-geofence pubsub="true" name="geoCircle">
+          <geofence coordinate-type="geographic" autosize-mesh="true" max-meshcells-per-geometry="500" output-multiple-results="true" output-sorted-results="true"/>
+          <geometry desc-fieldname="landmark" x-fieldname="long" y-fieldname="lat" radius-fieldname="radius" radius="1000" data-separator=" "/>
+          <position x-fieldname="long" y-fieldname="lat" lookupdistance="3000000"/>
+          <output geoid-fieldname="geoID" geodesc-fieldname="cirDesc" geodistance-fieldname="distToCenter" eventnumber-fieldname="eventnum"/>
+          <connectors>
+            <connector class="fs" name="subConnector3">
+              <properties>
+                <property name="type"><![CDATA[sub]]></property>
+                <property name="snapshot"><![CDATA[true]]></property>
+                <property name="dateformat"><![CDATA[%m/%d/%Y:%H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[/home/zeph.stemle@sas.com/uploads/iss_geocir.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-geofence>
+        <window-filter pubsub="true" name="insideCircle">
+          <expression><![CDATA[geoID != '']]></expression>
+        </window-filter>
+        <window-pattern name="approaching">
+          <schema>
+            <fields>
+              <field name="geoID" type="int64" key="true"/>
+              <field name="dt" type="date"/>
+              <field name="distToEdge" type="double"/>
+              <field name="polyDesc" type="string"/>
+            </fields>
+          </schema>
+          <patterns>
+            <pattern name="app_patt" index="geoID">
+              <events>
+                <event name="e1" source="inner1k"><![CDATA[g0 == distToEdge]]></event>
+                <event name="e2" source="inner1k"><![CDATA[g0 > distToEdge]]></event>
+              </events>
+              <logic><![CDATA[fby{30 seconds}(e1,e2)]]></logic>
+              <output>
+                <field-selection name="dt" node="e2"/>
+                <field-selection name="distToEdge" node="e2"/>
+                <field-selection name="polyDesc" node="e2"/>
+              </output>
+              <timefields>
+                <timefield source="inner1k" field="dt"/>
+              </timefields>
+            </pattern>
+          </patterns>
+        </window-pattern>
+        <window-pattern name="departing">
+          <schema>
+            <fields>
+              <field name="geoID" type="int64" key="true"/>
+              <field name="dt" type="date"/>
+              <field name="distToEdge" type="double"/>
+              <field name="polyDesc" type="string"/>
+            </fields>
+          </schema>
+          <patterns>
+            <pattern name="dep_patt" index="geoID">
+              <events>
+                <event name="e1" source="inner1k"><![CDATA[g0 == distToEdge]]></event>
+                <event name="e2" source="inner1k"><![CDATA[g0 < distToEdge]]></event>
+              </events>
+              <logic><![CDATA[fby{30 seconds}(e1,e2)]]></logic>
+              <output>
+                <field-selection name="dt" node="e2"/>
+                <field-selection name="distToEdge" node="e2"/>
+                <field-selection name="polyDesc" node="e2"/>
+              </output>
+              <timefields>
+                <timefield source="inner1k" field="dt"/>
+              </timefields>
+            </pattern>
+          </patterns>
+        </window-pattern>
+      </windows>
+      <edges>
+        <edge source="iss" target="geoProximityAnalysis" role="position"/>
+        <edge source="regionsPoly" target="geoProximityAnalysis" role="geometry"/>
+        <edge source="geoProximityAnalysis" target="outer1k"/>
+        <edge source="geoProximityAnalysis" target="inner1k"/>
+        <edge source="geoProximityAnalysis" target="insidePoly"/>
+        <edge source="iss" target="geoCircle" role="position"/>
+        <edge source="landmarksCir" target="geoCircle" role="geometry"/>
+        <edge source="geoCircle" target="insideCircle"/>
+        <edge source="inner1k" target="approaching"/>
+        <edge source="inner1k" target="departing"/>
+      </edges>
+    </contquery>
+  </contqueries>
+</project>
