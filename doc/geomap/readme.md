@@ -32,7 +32,7 @@ Start SAS ESP Streamviewer.
     
 6.  Click **OK**. The GEO Map will appear and automatically adjust the zoom factor as more data appears. You can also manually adjust the zoom factor with the mouse wheel.
 
-    <img src='images/iss.png'>
+    <img src='../../images/iss.png'>
     
 ## geoCircle Window GEO Map
 
