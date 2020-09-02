@@ -3,7 +3,20 @@
 ## Table of Contents
 
 * [Register for Free Trial](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#register-for-free-trial)
-[[_TOC_]]
+* [Log onto Trial Environment](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#log-onto-trial-environment)
+* [Upload Data](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#upload-data)
+* [Access SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#access-sas-esp-studio)
+* [Upload Model to SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#upload-model-to-sas-esp-studio)
+* [Edit Input Data Connectors and Subscriber Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#edit-input-data-connectors-an
+d-subscriber-connectors)
+- [Editing Input Data (Publisher) Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#editing-input-data-(publisher)-connector
+s)
+- [Editing Subscriber Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#editing-subscriber-connectors)
+* [Testing the Model in SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#testing-the-model-in-sas-esp-studio)
+* [Enable Logging on the SAS ESP Server](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#enable-logging-on-the-sas-esp-server)
+* [Executing the Model on the ESP Server](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#executing-the-model-on-the-esp-server)
+* [View Model Output Using SAS ESP Streamviewer](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#view-model-output-using-sas-esp-strea
+mviewer)
 
 ## Register for Free Trial
 
