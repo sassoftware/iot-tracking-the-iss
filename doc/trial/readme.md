@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-[Register for Free Trial](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#register-for-free-trial)
+* [Register for Free Trial](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#register-for-free-trial)
 [[_TOC_]]
 
 ## Register for Free Trial
