@@ -10,7 +10,7 @@
 * [Edit Input Data Connectors and Subscriber Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#edit-input-data-connectors-and-subscriber-connectors)
 	 - [Editing Input Data (Publisher) Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#editing-input-data-(publisher)-connectors)
 	 - [Editing Subscriber Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#editing-subscriber-connectors)
-		* [Testing the Model in SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#testing-the-model-in-sas-esp-studio)
+* [Testing the Model in SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#testing-the-model-in-sas-esp-studio)
 * [Enable Logging on the SAS ESP Server](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#enable-logging-on-the-sas-esp-server)
 * [Executing the Model on the ESP Server](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#executing-the-model-on-the-esp-server)
 * [View Model Output Using SAS ESP Streamviewer](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#view-model-output-using-sas-esp-streamviewer)
