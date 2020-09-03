@@ -3,17 +3,17 @@
 ## Table of Contents
 
 * [Register for Free Trial](#register-for-free-trial)
-* [Log onto Trial Environment](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#log-onto-trial-environment)
-* [Upload Data](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#upload-data)
-* [Access SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#access-sas-esp-studio)
-* [Upload Model to SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#upload-model-to-sas-esp-studio)
-* [Edit Input Data Connectors and Subscriber Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#edit-input-data-connectors-and-subscriber-connectors)
-	 * [Editing Input Data (Publisher) Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#editing-input-data-(publisher)-connectors)
-	 - [Editing Subscriber Connectors](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#editing-subscriber-connectors)
-* [Testing the Model in SAS ESP Studio](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#testing-the-model-in-sas-esp-studio)
-* [Enable Logging on the SAS ESP Server](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#enable-logging-on-the-sas-esp-server)
-* [Executing the Model on the ESP Server](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#executing-the-model-on-the-esp-server)
-* [View Model Output Using SAS ESP Streamviewer](https://github.com/sassoftware/iot-tracking-the-iss/tree/master/doc/trial#view-model-output-using-sas-esp-streamviewer)
+* [Log onto Trial Environment](#log-onto-trial-environment)
+* [Upload Data](#upload-data)
+* [Access SAS ESP Studio](#access-sas-esp-studio)
+* [Upload Model to SAS ESP Studio](#upload-model-to-sas-esp-studio)
+* [Edit Input Data Connectors and Subscriber Connectors](#edit-input-data-connectors-and-subscriber-connectors)
+	* [Editing Input Data (Publisher) Connectors](#editing-input-data-(publisher)-connectors)
+	* [Editing Subscriber Connectors](#editing-subscriber-connectors)
+* [Testing the Model in SAS ESP Studio](#testing-the-model-in-sas-esp-studio)
+* [Enable Logging on the SAS ESP Server](#enable-logging-on-the-sas-esp-server)
+* [Executing the Model on the ESP Server](#executing-the-model-on-the-esp-server)
+* [View Model Output Using SAS ESP Streamviewer](#view-model-output-using-sas-esp-streamviewer)
 
 ## Register for Free Trial
 
