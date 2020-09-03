@@ -38,10 +38,10 @@ Click the provided link and proceed to log onto the environment.
 
 After you have successfully logged in, you can upload the files required by the model. The `modelcsv.xml` model requires you to upload the following files:
 
-- [config.xml](files/config.xml)
-- [countries2.csv](files/countries2.csv)
-- [iss_input.csv](files/iss_input.csv)
-- [landmarks.csv](files/landmarks.csv)
+- [config.xml](../../files/config.xml)
+- [countries2.csv](../../files/countries2.csv)
+- [iss_input.csv](../../files/iss_input.csv)
+- [landmarks.csv](../../files/landmarks.csv)
 
 1.	On the left side, click **Data**.
     *The Data Management Screen appears.*
