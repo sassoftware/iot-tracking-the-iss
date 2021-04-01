@@ -1,6 +1,8 @@
 # Tracking the International Space Station
 #### An Introduction to Geofences
 
+<img src="https://img.shields.io/badge/Category-Streaming%20Data-blue"> <img src="https://img.shields.io/badge/Sub--Category-Geofence-yellowgreen"> <img src="https://img.shields.io/badge/Difficulty-Intermediate-yellow"> <img src="https://img.shields.io/badge/Updated-Sep%202020-orange">
+
 ## Overview
 
 Welcome to the Tracking the International Space Station, an Introduction to Geofences ESP example. In this example you will get an introduction to the Geofence window including:
